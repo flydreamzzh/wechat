@@ -15,5 +15,6 @@ return array(
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
+    'callmez\\wechat\\sdk\\' => array($vendorDir . '/callmez/yii2-wechat-sdk'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

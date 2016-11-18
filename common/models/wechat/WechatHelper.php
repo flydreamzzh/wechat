@@ -66,7 +66,7 @@ class WechatHelper
         $wechat->createMenu([
             [
                 'type' => 'click',
-                'name' => '今日ff歌曲',
+                'name' => '今日歌曲',
                 'key' => 'V1001_TODAY_MUSIC'
             ],
             [

@@ -47,7 +47,7 @@ class EntranceController extends Controller
     {
         $wechat = new WechatHelper();
         if(!isset($_GET["echostr"])) {
-            $wechat->response();
+            $wechat->responseMsg();
         }else {
             $wechat->valid();
         }

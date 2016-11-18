@@ -543,6 +543,7 @@ class Wechat extends Component
      */
     public function parseRequestData($xml = null)
     {
+        libxml_disable_entity_loader(true);// 防止因libxml错误缓冲导致的安全问题
         $xml === null && $xml = Yii::$app->request->getRawBody();
         return empty($xml) ? [] : (array)simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
     }

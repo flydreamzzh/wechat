@@ -35,6 +35,7 @@ class WechatModel extends Object
     public function responseMsg()
     {
         $postObj = $this->wechat()->parseRequestData(); // 获取post数据
+        var_dump(!$postObj);exit();
         if (!$postObj) { // 判断获取到的数据是否为空
             $reType = trim($postObj->MsgType);
             switch ($reType) {

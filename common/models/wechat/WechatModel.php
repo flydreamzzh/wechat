@@ -10,17 +10,7 @@ class WechatModel extends Object
     /**
      * @var Wechat $_wechat
      */
-    public $_wechat;
-    
-    /**
-     * 
-     * {@inheritDoc}
-     * @see \yii\base\Object::init()
-     */
-    public function init()
-    {
-        $this->_wechat = Yii::$app->wechat;
-    }
+    public $_wechat = Yii::$app->wechat;
     
     /**
      * 
@@ -28,7 +18,7 @@ class WechatModel extends Object
     public function valid()
     {
         $echoStr = $_GET["echostr"];
-        if ($this->_wecha->checkSignature()) {
+        if ($this->_wechat->checkSignature()) {
             echo $echoStr;
             exit();
         }

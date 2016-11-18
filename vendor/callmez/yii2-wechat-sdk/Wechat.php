@@ -539,13 +539,13 @@ class Wechat extends Component
     /**
      * 解析微信服务器请求的xml数据
      * @param srting $xml 服务发送的xml数据
-     * @return array
+     * @return null|object
      */
     public function parseRequestData($xml = null)
     {
         libxml_disable_entity_loader(true);// 防止因libxml错误缓冲导致的安全问题
         $xml === null && $xml = Yii::$app->request->getRawBody();
-        return empty($xml) ? [] : (array)simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
+        return empty($xml) ? null : simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
     }
 
     protected $_accessToken;

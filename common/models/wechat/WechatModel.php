@@ -8,9 +8,13 @@ use yii\base\Object;
 class WechatModel extends Object
 {
     /**
-     * @var Wechat $_wechat
+     * @return Wechat $_wechat
      */
-    public $_wechat = Yii::$app->wechat;
+    public function wechat()
+    {
+        $_wechat = Yii::$app->wechat;
+        return $_wechat;
+    }
     
     /**
      * 
@@ -18,7 +22,7 @@ class WechatModel extends Object
     public function valid()
     {
         $echoStr = $_GET["echostr"];
-        if ($this->_wechat->checkSignature()) {
+        if ($this->wechat()->checkSignature()) {
             echo $echoStr;
             exit();
         }

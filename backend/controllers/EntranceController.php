@@ -5,6 +5,7 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use common\models\wechat\WechatHelper;
+use common\models\wechat\WechatModel;
 
 /**
  * Entrance controller
@@ -45,7 +46,7 @@ class EntranceController extends Controller
      */
     public function actionIndex()
     {
-        $wechat = new WechatHelper();
+        $wechat = new WechatModel();
         if(!isset($_GET["echostr"])) {
             $wechat->responseMsg();
         }else {
